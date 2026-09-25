@@ -1,0 +1,22 @@
+# Entorno virtual
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Build
+build/
+dist/
+*.spec
+
+# Ejecutables
+*.exe
+
+# Logs
+*.log
+Log.txt
+
+# Json
+Sapb1datastudioPRD.json
+

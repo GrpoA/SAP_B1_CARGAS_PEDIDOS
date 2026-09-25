@@ -1,0 +1,71 @@
+{
+  "project": "grpa-sapb1-datastudio",
+  "dataset_id": "DatosTransaccionalesSB1",
+  "table_id": "PedidosSB1",
+  "partition_field": "FechaPedido",
+  "clustering_fields": ["Sociedad", "CodigoCliente"],
+  "ruta_salida_csv": "\\\\morfeoc\\\\bwpcp\\\\BigQuery\\\\DatosTransaccionales\\\\PedidosB1\\\\PedidosSapB1.csv",
+  
+
+  "conexion_hana": {
+    "host": "JANA1",
+    "port": 30015,
+    "user": "MESATEC",
+    "password": "Chaid21*"
+  },
+
+  "vistas_hana": {
+  "1100": {
+    "ruta": "\\\\morfeoc\\\\bwpcp\\\\sapb1\\\\1100",
+    "vista": {"SBO_PLACA.AVC_PEDIDOS_1100":"PEDIDOS1100.csv"},
+    "nvista": "SBO_PLACA.AVC_PEDIDOS_1100",
+    "narchivo":"PEDIDOS1100.csv"
+  },
+  "6010": {
+    "ruta": "\\\\morfeoc\\\\bwpcp\\\\sapb1\\\\6010",
+    "vista": {"SBOGABRIEL_MEX.AVC_PEDIDOS_6010":"PEDIDOS6010.csv"},
+    "nvista": "SBOGABRIEL_MEX.AVC_PEDIDOS_6010",
+    "narchivo": "PEDIDOS6010.csv"
+  },
+  "3010": {
+    "ruta": "\\\\morfeoc\\\\bwpcp\\\\sapb1\\\\3010",
+    "vista": {"SBO_IMF_PROD.AVC_PEDIDOS_3010":"PEDIDOS3010.csv"},
+    "nvista": "SBO_IMF_PROD.AVC_PEDIDOS_3010",
+    "narchivo": "PEDIDOS3010.csv"
+  }
+
+},
+
+  "schema": [
+    {"name": "FechaPedido", "type": "DATE"},
+    {"name": "Mes", "type": "STRING"},
+    {"name": "Anio", "type": "STRING"},
+    {"name": "Sociedad", "type": "STRING"},
+    {"name": "CeBe", "type": "STRING"},
+    {"name": "FechaEntrega", "type": "DATE"},
+    {"name": "NumeroPedido", "type": "STRING"},
+    {"name": "CodigoCliente", "type": "STRING"},
+    {"name": "NombreCliente", "type": "STRING"},
+    {"name": "TipoMercado", "type": "STRING"},
+    {"name": "NumArticulo", "type": "STRING"},
+    {"name": "DescripArticulo", "type": "STRING"},
+    {"name": "Sublinea", "type": "STRING"},
+    {"name": "GrupoArticulo", "type": "STRING"},
+    {"name": "Almacen", "type": "STRING"},
+    {"name": "CantidadPedida", "type": "FLOAT"},
+    {"name": "CantidadPendiente", "type": "FLOAT"},
+    {"name": "TotalLinea", "type": "FLOAT"},
+    {"name": "DescuentoLinea", "type":"FLOAT"},
+    {"name": "TotalLineaNeto", "type": "FLOAT"},
+    {"name": "EstadoDocumento", "type": "STRING"},
+    {"name": "EstatusDocumento", "type": "STRING"}
+    
+  ],
+
+  "procedure": {
+    "stored1": "`grpa-sapb1-datastudio.ProcesosSB1.PedidosSB1`"
+
+  }
+
+  
+}

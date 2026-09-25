@@ -1,0 +1,1 @@
+pyinstaller --distpath="." --onefile --collect-all hdbcli --icon "GrupoA.ico" "SapB1_CargaPedidos.py"
